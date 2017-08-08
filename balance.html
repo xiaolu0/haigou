@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/balance.css"/>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>   
+	</head>
+	<body>
+		<header id="inheader">
+			 <div class="margin">
+			 	<ul class="h-f">
+			 	<li>嗨购higou.cc欢迎你！</li>
+			 	<li><a href="login.html">登录</a></li>
+			 	<li><span>|</span></li>
+			 	<li><a href="javascript:;">免费注册</a></li>
+			 	<li><i ></i>手机嗨购</li>
+			 	</ul>
+			 	<ul class="h-r">
+			 		<li><a href="javascript:;">我的订单</a></li>
+			 		<li><span>|</span></li>
+			 		<li>
+			 			<a href="javascript:;">个人中心</a><i class="i"></i>
+			 			<ul>
+			 				<li><a href="javascript:;">我的优惠券</a></li>
+			 				<li><a href="javascript:;">我的积分</a></li>
+			 				<li><a href="javascript:;">账户安全</a></li>
+			 				<li><a href="javascript:;">我收藏的商品</a></li>
+			 			</ul>
+			 		</li>
+			 		<li><span>|</span></li>
+			 		<li>
+			 			<a href="javascript:;">客户服务</a><i class="i"></i>
+			 			<ul>
+			 				<li><i class="i1"></i><a hef="#">联系客服</a></li>
+			 				<li><i class="i2"></i><a hef="#">帮助中心</a></li>
+			 			</ul>
+			 		</li>
+			 		<li><span>|</span></li>
+			 		<li><a href="javascript:;">消费者告知书</a></li>
+			 		<li><span>|</span></li>
+			 		<li>
+			 			<a href="javascript:;">更多</a><i class="i"></i>
+			 			<ul>
+			 				<li><a href="javascript:;">收藏本站</a></li>
+			 				<li><a href="javascript:;">新浪微博</a></li>
+			 				<li><a href="javascript:;">微信公众号</a></li>
+			 				<li><a href="javascript:;">higgoucc公众号</a></li>
+			 			</ul>
+			 		</li>
+			 	</ul>
+			 </div>
+		</header>
+       <div id="balaNav">
+       	   <a href="index.html"> <img src="images/logo.gif" /></a>
+       	   <i></i>
+       </div>
+       <p id="balanTitle">
+       	<span>商品名称</span>
+       	<span>单价</span>
+       	<span>购买数量</span>
+       	<span>小计</span>
+       	<span>操作</span>
+       	
+       </p>
+      <h3>国内仓库</h3> 
+       <ul id="balanPall">
+       	<!--<li>
+       		<img src="images/2_thumb_G_1461779742619.jpg" />
+       		<div class="text">
+       			<a href="javascript:;">源自天然无污染的瑞士奶源，是欧洲妈妈喜欢的贴近母乳的奶粉。</a>
+       			<p>税费：免税</p>
+       		</div>
+       		<span class="money">￥489</span>
+       		<div class="num">
+       			<a class="minus">-</a>
+			   <span class="buyNum">1</span>
+			   <a class="add">+</a>
+       		</div>
+       		<span class="all">￥489</span>
+       		<i></i>
+       	</li>-->
+       </ul>
+       <div class="order">
+       	 <div class="order-l">
+       	 	<span>继续购物</span>
+       	 	<span>清空购物车</span>
+       	 </div>
+       	 <div class="order-c">
+       	   <p><span class="count">商品共  1件</span><span class="allprice">总价（不包含运费）￥1047.00</span></p>
+       	   <p><span>活动优惠：</span><span>商品应付总计：￥1047.00</span><span>订单税费￥10.00</span></p>
+       	 </div>
+       	 <div class="order-r">
+       	 	确认订单
+       	 </div>
+       	</div>
+<footer id="dfooter">
+			<ul class="ft">
+				<li><a href="#">免责条款</a><span>|</span></li>
+				<li><a href="#">隐私保护</a><span>|</span></li>
+				<li><a href="#">咨询热点</a><span>|</span></li>
+				<li><a href="#">联系我们</a><span>|</span></li>
+				<li><a href="#">公司简介</a><span>|</span></li>
+				<li><a href="#">批发方案</a><span>|</span></li>
+				<li><a href="#">配送方式</a></li>
+			</ul>
+			<p>
+				<a href="#"><img src="images/f1.png" /> </a>
+				&copy;2005-2017 嗨购 higou 深圳达悦科技有限公司 。版权所有，并保留所有权利。
+			</p>
+			<div><img src="images/f2.png" /><a><img src="images/f3.jpg" /> </a> </div>
+		</footer>
+	</body>
+	<script>
+		 var cartStr = $.cookie("numId");
+		 if(cartStr== undefined){
+		 	alert("没有商品,请选购商品")
+		 }else{
+		 	 var cartObj = JSON.parse(cartStr) ;
+		 	 
+		 }
+		var html="";
+		console.log(cartObj )
+		$.ajax({
+			type:"get",
+			url:"json/index.json",
+			async:true,
+			success:function(data){
+			var html="";
+			console.log(data);
+			var count=0;
+				for(var i in cartObj){	  
+					count++;
+					    console.log(i,data);
+					    console.log(cartObj[i]);
+		                getInfo(i,data);
+		                html+="<li><img src='"+data[i].imageURL+"'/>"+
+		                "<div class='text'><a href='javascript:;'>"+data[i].content+"</a>"+
+		       			"<p>税费：免税</p></div><span class='money'>￥"+data[i].oldPrice+"</span>"+
+		       			"<div class='num'>"+
+		       			"<a class='minus'>-</a>"+
+					    "<span class='buyNum'>"+cartObj[i]+"</span>"+
+					    "<a class='add'>+</a>"+
+		       		    "</div><span class='all'>￥"+parseInt(data[i].oldPrice)*parseInt(cartObj[i])+"</span>"+
+       		            "<i></i></li>";
+
+		             	}
+		           $("#balanPall").append(html); 
+		           $(".count").text("商品共"+count+"件");
+//		           $(".allprice").text("总价（不包含运费）￥"+1047.00)
+//		           var count=1;
+//		           $(".add").click(function(){
+//						count++;
+//						$(".buyNum").text(count);
+//						$(".all").text("￥"+count*parseInt(data[i].oldPrice))						
+//					})
+//		           $(".minus").click(function(){
+//		           	  if(count>1){
+//		           	  	count--;
+//		           	  	$(".buyNum").text(count);
+//						$(".all").text("￥"+count*parseInt(data[i].oldPrice))	
+//		           	  }else{
+//		           	  	alert("您要移除商品吗？")
+//		           	  	$(".buyNum").text(1);
+//		           	  }
+//		           })
+		     }
+			
+		});
+		
+		function getInfo(id,data){
+			 for(var i=0;i<data.length;i++){
+			      if(i==data[i].id){
+			      	return data[i];
+			      }
+			 }
+		}
+	
+	console.log($(".add"))
+	
+		
+		
+	</script>
+	    
+</html>

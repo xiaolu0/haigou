@@ -1,0 +1,219 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+#dheader{
+   
+    height:100px;
+    a{
+        
+        display:block;
+        float:left;
+        margin-left:100px;
+        cursor: pointer;
+    }
+    p{
+        
+         margin-right:100px;
+          float:right;
+    }
+}
+#dbanner{
+    position:relative;
+    height:520px;
+    background: url(../images/banner.jpg)no-repeat 45%;
+    div{
+        overflow: hidden;
+        a{
+               text-decoration: none;
+               color:#000000;
+           }
+         h3{
+           float:left;
+           
+       }
+       span{
+           float:right;
+       }
+    }
+    .btn{
+        padding:30px 30px 0 30px;
+        width:290px;
+        height:310px;
+       
+        background:white;
+        position:absolute;
+        left:50%;
+        top:8%;
+        transform: translate(75%,10%);
+      .btn1{
+           font-size: 12px;
+          li{
+              list-style: none;
+              height:30px;
+              width:268;
+              border:1px solid #cccccc;
+              margin:10px 0;
+             
+             background: white;
+              .i1{
+                  float:left;
+                  display:inline-block;
+                  width:20px;
+                  height:20px;
+                  margin:6px 5px;
+                  
+                  background:url(../images/user1.png)no-repeat;
+              }
+              .i2{
+                  float:left;
+                  display:inline-block;
+                  width:20px;
+                  height:20px;
+                  margin:6px 5px;
+                  
+                  background:url(../images/user1.png)no-repeat 0 -20px;
+              }
+              .i3{
+                  background: url(../images/user1.png) no-repeat 0 -60px;
+                  a{
+                      color:white;
+                      text-decoration: none;
+                  }
+              }
+              .checked{
+                  background: url(../images/user1.png) no-repeat 0 -78px;
+              }
+              input{
+                  width:241px;
+                  float:left;
+                  vertical-align:middle;
+                  border:0;
+                  height:30px;
+                  border-left:1px solid #CCCCCC;
+                  padding:0 8px;
+              }
+          }
+         li:nth-child(3){
+             text-align: center;
+             height:20px;
+             width:278px;
+             padding:5px 5px;
+             border:0;
+             
+          i{
+              display: inline-block;
+              width:15px;
+              height:15px;
+              border:1px solid #ccc;
+              
+              float:left;
+              
+          }
+         a {
+             float:right;
+             text-decoration: none;
+         }
+      } 
+      li:nth-child(4){
+          background: #e31436;
+          text-align: center;
+          font:18px/30px "";
+          cursor: pointer;
+      }
+      }
+      
+      .btn2{
+          border-top:1px solid #CCCCCC;
+          margin-top:50px;
+          overflow: hidden;
+          padding:10px 10px;
+          font-size: 12px;;
+          li{
+              float:left;
+              list-style: none;
+              margin:0 5px;
+              i{
+                  float:left;
+                  margin-right:5px;
+              }
+              a{ 
+                  margin-top:4px;
+                  float:left;
+                  color:#000;
+                  text-decoration: none;
+                  cursor: pointer;
+                 &:hover{
+                     color:dodgerblue;
+                     
+                 }
+              }
+              .i1{
+                  
+                 display:inline-block;
+                  width:22px;
+                  height:22px;
+                  background: url(../images/user1.png)no-repeat 0 -150px;
+              }
+              .i2{
+                 display:inline-block;
+                  width:22px;
+                  height:22px;
+                  background: url(../images/user1.png)no-repeat 0 -101px;
+              }
+              .i3{
+                 display:inline-block;
+                  width:22px;
+                  height:22px;
+                  background: url(../images/user1.png)no-repeat 0 -125px;
+              }
+          }
+          
+              
+         
+      }
+    }
+}
+#dfooter{
+    height:148px;
+    text-align: center;
+    
+    .ft{
+        margin:40px 340px 0 360px; ;
+        overflow: hidden;
+        li{
+            
+            float:left;
+            list-style: none;
+            a{
+                text-decoration: none;
+                color:#666;
+                &:hover{
+                    color:red;
+                }
+            }
+            span{
+                padding:0 20px;
+                color:#b77d66;
+                
+            }
+        }
+    }
+    p{
+        a{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        margin-top:15px;
+        vertical-align: middle;
+        font-size:14px;
+        color:#d3c5cd;
+    }
+    div{
+        margin:15px 0;
+        img{
+            margin:10px
+        }
+    }
+}

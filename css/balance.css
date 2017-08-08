@@ -1,0 +1,103 @@
+#balaNav {
+  margin-left: 130px;
+  background: white;
+  width: 1150px; }
+  #balaNav i {
+    margin-left: 620px;
+    display: inline-block;
+    height: 38px;
+    width: 354px;
+    background: url(../images/balance.png) no-repeat center; }
+
+#balanTitle {
+  margin: 20px 0 0 50px; }
+  #balanTitle span {
+    margin-left: 120px; }
+  #balanTitle span:nth-child(2) {
+    margin-left: 460px; }
+
+h3 {
+  margin: 20px 0 0 170px; }
+
+#balanPall {
+  margin-left: 150px; }
+  #balanPall li {
+    border: 1px solid #ccc;
+    width: 1094px;
+    height: 104px;
+    padding: 20px 0; }
+    #balanPall li img {
+      float: left;
+      width: 80px;
+      height: 80px; }
+    #balanPall li .text {
+      margin-left: 20px;
+      width: 300px;
+      float: left; }
+      #balanPall li .text:hover a {
+        color: red;
+        text-decoration: underline; }
+      #balanPall li .text p {
+        margin-top: 50px; }
+    #balanPall li .money {
+      float: left;
+      margin: 50px 0 0 140px; }
+    #balanPall li .num {
+      margin: 50px 0 0 110px;
+      float: left;
+      height: 26px;
+      width: 92px; }
+      #balanPall li .num span {
+        display: inline-block;
+        width: 40px;
+        height: 26px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        text-align: center; }
+      #balanPall li .num a:first-child {
+        margin-right: -5px;
+        cursor: pointer; }
+      #balanPall li .num a {
+        display: inline-block;
+        margin-left: -4px;
+        width: 24px;
+        height: 26px;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #ccc; }
+    #balanPall li .all {
+      float: left;
+      margin: 50px 0 0 100px; }
+    #balanPall li i {
+      margin: -10px 0 0 280px;
+      float: left;
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      background: url(../images/itemshut.jpg) no-repeat 0 -12px; }
+
+.order {
+  margin-left: 150px;
+  height: 60px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  width: 1095px;
+  line-height: 60px; }
+  .order .order-l {
+    float: left; }
+  .order .order-c {
+    float: left;
+    margin-left: 430px; }
+    .order .order-c .count {
+      color: red;
+      font-size: 16px;
+      margin-right: 10px; }
+  .order .order-r {
+    float: right;
+    width: 120px;
+    background: #d22147;
+    text-align: center;
+    color: white;
+    line-height: 60px; }
+
+/*# sourceMappingURL=balance.css.map */

@@ -1,0 +1,202 @@
+img {
+  cursor: pointer; }
+
+#title {
+  padding: 15px 0;
+  border-bottom: 1px solid #C1C1C4;
+  margin-left: 150px;
+  width: 1090px; }
+
+#buyMain {
+  overflow: hidden; }
+  #buyMain #img {
+    float: left;
+    margin-left: 150px;
+    position: relative; }
+    #buyMain #img .oldImg {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border: 1px solid #ccc;
+      margin-top: 15px; }
+      #buyMain #img .oldImg img {
+        width: 400px;
+        height: 400px; }
+      #buyMain #img .oldImg #zoom {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.4); }
+    #buyMain #img .bigImg {
+      display: none;
+      background: red;
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      left: 430px;
+      top: 0;
+      border: 1px solid #ccc;
+      overflow: hidden; }
+      #buyMain #img .bigImg img {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        left: 0;
+        top: 0; }
+    #buyMain #img .smarImg {
+      width: 400px;
+      position: relative;
+      margin-top: 10px; }
+      #buyMain #img .smarImg ul {
+        margin-left: 33px;
+        overflow: hidden; }
+        #buyMain #img .smarImg ul .active {
+          border: 1px solid red; }
+        #buyMain #img .smarImg ul li {
+          float: left; }
+          #buyMain #img .smarImg ul li img {
+            width: 70px;
+            height: 70px; }
+      #buyMain #img .smarImg .r {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        width: 33px;
+        height: 69px;
+        border: 1px solid #ccc;
+        font: 40px/70px "";
+        text-align: center; }
+      #buyMain #img .smarImg .l {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 33px;
+        height: 69px;
+        border: 1px solid #ccc;
+        font: 40px/70px "";
+        text-align: center; }
+  #buyMain .buyDateil {
+    float: left;
+    margin-left: 15px;
+    width: 660px; }
+    #buyMain .buyDateil dl dt:first-child {
+      font: 700 20px/40px ""; }
+    #buyMain .buyDateil dl dt:nth-child(2) {
+      font: 16px/20px "";
+      color: #33336c; }
+    #buyMain .buyDateil dl dd:nth-child(3) {
+      padding: 5px 10px;
+      background: #f9f9f9;
+      border-top: 1px dashed #B1B0B0;
+      border-bottom: 1px dashed #B1B0B0;
+      margin-top: 15px; }
+      #buyMain .buyDateil dl dd:nth-child(3) strong {
+        color: red;
+        font: 20px/50px "";
+        margin-left: 10px; }
+      #buyMain .buyDateil dl dd:nth-child(3) span {
+        display: inline-block;
+        height: 20px;
+        width: 40px;
+        background: #f68587;
+        color: white;
+        border-radius: 5px;
+        text-align: center; }
+      #buyMain .buyDateil dl dd:nth-child(3) .i {
+        text-decoration: line-through; }
+    #buyMain .buyDateil dl dd:nth-child(4) {
+      margin-top: 15px; }
+      #buyMain .buyDateil dl dd:nth-child(4) span:first-child {
+        margin-right: 20px; }
+    #buyMain .buyDateil dl dd:nth-child(5) {
+      margin-top: 15px; }
+      #buyMain .buyDateil dl dd:nth-child(5) span:first-child {
+        margin-right: 20px; }
+      #buyMain .buyDateil dl dd:nth-child(5) a:nth-child(4) {
+        margin-left: -5px;
+        cursor: pointer; }
+      #buyMain .buyDateil dl dd:nth-child(5) a {
+        display: inline-block;
+        margin-right: -4px;
+        width: 24px;
+        height: 26px;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #ccc; }
+      #buyMain .buyDateil dl dd:nth-child(5) span:nth-child(3) {
+        display: inline-block;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        width: 50px;
+        height: 26px;
+        text-align: center; }
+    #buyMain .buyDateil dl dd:nth-child(6) {
+      margin-top: 15px; }
+      #buyMain .buyDateil dl dd:nth-child(6) a:first-child {
+        display: inline-block;
+        width: 160px;
+        font: 20px/50px "";
+        color: white;
+        text-align: center;
+        background: #d22147; }
+      #buyMain .buyDateil dl dd:nth-child(6) i {
+        display: inline-block;
+        width: 156px;
+        font: 20px/48px "";
+        text-align: center;
+        background: #ffeced;
+        color: #f9645b;
+        border: 2px solid #f8305b; }
+    #buyMain .buyDateil dl dd:nth-child(7) {
+      margin-top: 15px; }
+    #buyMain .buyDateil dl dd:nth-child(8) {
+      margin-top: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #ccc; }
+      #buyMain .buyDateil dl dd:nth-child(8) span:nth-child(2) {
+        color: red; }
+
+#cover {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2; }
+  #cover .settle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    width: 476px;
+    height: 102px;
+    border: 2px solid #d8002d;
+    background: white;
+    text-align: center;
+    padding: 40px 0px;
+    border-radius: 12px; }
+    #cover .settle p img {
+      vertical-align: middle; }
+    #cover .settle p span {
+      vertical-align: middle;
+      font-size: 30px;
+      margin-left: 37px; }
+    #cover .settle p:nth-child(2) a {
+      color: red;
+      cursor: pointer; }
+    #cover .settle p:nth-child(2) span {
+      margin-left: 94px;
+      background: #e01841;
+      display: inline-block;
+      height: 40px;
+      width: 148px;
+      font: 20px/40px "";
+      color: white;
+      cursor: pointer; }
+
+/*# sourceMappingURL=buy.css.map */
