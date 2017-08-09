@@ -130,7 +130,7 @@
 			async:true,
 			success:function(data){
 			var html="";
-			
+			var allPrice1=0;
 			var count=0;
 				for(var i in cartObj){	//8:1  
 					console.log(cartObj,i);
@@ -149,11 +149,18 @@
 					    "<a class='add'>+</a>"+
 		       		    "</div><span class='all'>￥"+parseInt(item.oldPrice)*parseInt(cartObj[i])+"</span>"+
        		            "<i></i></li>";
+       		            allPrice1+=parseInt(item.oldPrice)*parseInt(cartObj[i]);
 		             	}
 		           $("#balanPall").append(html); 
 		           $(".count").text("商品共"+count+"件");
-		           
-		         
+		           $("#balanPall i").click(function(){  
+		           	  $(this).parent().hide();
+		           	   	var iN=$(this).parent().attr("class");
+		           	   	console.log(iN);
+		           	   	delete cartObj[iN];
+		      
+		           })
+		            $(".allprice").html("商品应付总计：￥"+allPrice1)
                    $("#balanPall li").on("click",function(ev){
 		           	   var $target=$(ev.target);
 		         if($target.is(".num a")){
