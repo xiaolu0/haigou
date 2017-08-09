@@ -29,30 +29,47 @@ $(".btn1 input:text").focusout(function(){
   
 
  $(".dl").click(function(){
- 	console.log("aaaaa")
- var passValue=$(":password").val();
- var value=$(".btn1 input:text").val();
-    $.ajax({
-	type:"get",
-	url:"json/dl.json",
-	async:true,
-	success:function(data){
-		 var flag=false;
-		for(let i=0;i<data.length;i++){	
-			console.log(value,data[i].user);
-			  if(value==data[i].user&&passValue==data[i].password){
-			  	 flag=true;
-			  }
-			 
-		}
-		if(!flag){
-			alert("用户不存在");
-		}else{
-			location.href="index.html";
-		}
-	}
-     
- });	
+// 	console.log("aaaaa")
+// var passValue=$(":password").val();
+// var value=$(".btn1 input:text").val();
+//  $.ajax({
+//	type:"get",
+//	url:"json/dl.json",
+//	async:true,
+//	success:function(data){
+//		 var flag=false;
+//		for(let i=0;i<data.length;i++){	
+//			console.log(value,data[i].user);
+//			  if(value==data[i].user&&passValue==data[i].password){
+//			  	 flag=true;
+//			  }
+//			 
+//		}
+//		if(!flag){
+//			alert("用户不存在");
+//		}else{
+//			location.href="index.html";
+//		}
+//	}
+//   
+// });
+ var str=document.cookie;
+ var arr=str.split("; ");
+  for(var i in arr){
+  	var arr1=arr[i].split("=");
+  	
+  	if(arr1[0]=="user"){
+  		var arr2=arr1[1].split(",")
+  		var userName=arr2[0];
+  		var passWord=arr2[1];
+  		
+  	}
+  }
+  if($(".user1").val()==userName&&$(".pass1").val()==passWord){
+  	    location.href="index.html";
+  }else{
+  	     alert("用户不存在");
+  }
  });
   $(".btn1 .i3").click(function(){
   	$(this).toggleClass("checked");
@@ -124,7 +141,7 @@ function Input3(){
 	}
 }
 function Input4(){
-	var reg3=/\w{11}\.com$/
+	var reg3=/\w{11}\@.com$/
 	if(!reg3.test(oInput[3].value)&&oInput[3].value!=""){
 		oSpan[2].style.display="block";
 		oP[3].style.display="";
@@ -139,7 +156,7 @@ function Input4(){
 	}
 }
 $(".last").click(function(){
-	var reg3=/\w{11}\.com$/;
+	var reg3=/\w{11}\@.com$/;
 	var reg2=/\w{6,20}$/;
 	var flag=true;
 	if(oInput[0].value.length<=3|| oInput[0].value==""){
@@ -160,8 +177,8 @@ $(".last").click(function(){
 	else{
 		alert("请输入正确的用户名和密码");
 	}
+	document.cookie="user"+"="+$(".username").val()+","+$(".pass").val()+";";
 })
-
 
 
 
