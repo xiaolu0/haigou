@@ -81,17 +81,20 @@ h3 {
   height: 60px;
   border: 1px solid #ccc;
   background: #f8f8f8;
-  width: 1095px;
-  line-height: 60px; }
+  width: 1095px; }
   .order .order-l {
-    float: left; }
+    float: left;
+    margin-top: 20px; }
   .order .order-c {
     float: left;
-    margin-left: 430px; }
+    height: 60px;
+    margin-left: 400px; }
     .order .order-c .count {
       color: red;
       font-size: 16px;
       margin-right: 10px; }
+    .order .order-c .allprice {
+      margin-right: 20px; }
   .order .order-r {
     float: right;
     width: 120px;

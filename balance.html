@@ -91,7 +91,7 @@
        	 </div>
        	 <div class="order-c">
        	   <p><span class="count">商品共  1件</span><span class="allprice">总价（不包含运费）￥1047.00</span></p>
-       	   <p><span>活动优惠：</span><span>商品应付总计：￥1047.00</span><span>订单税费￥10.00</span></p>
+       	   <p><span>活动优惠：</span><span class="allprice">商品应付总计：￥1047.00</span><span>订单税费￥10.00</span></p>
        	 </div>
        	 <div class="order-r">
        	 	确认订单
@@ -123,63 +123,90 @@
 		 	 
 		 }
 		var html="";
-		console.log(cartObj )
+	
 		$.ajax({
 			type:"get",
 			url:"json/index.json",
 			async:true,
 			success:function(data){
 			var html="";
-			console.log(data);
+			
 			var count=0;
-				for(var i in cartObj){	  
+				for(var i in cartObj){	//8:1  
+					console.log(cartObj,i);
+					
 					count++;
-					    console.log(i,data);
-					    console.log(cartObj[i]);
-		                getInfo(i,data);
-		                html+="<li><img src='"+data[i].imageURL+"'/>"+
-		                "<div class='text'><a href='javascript:;'>"+data[i].content+"</a>"+
-		       			"<p>税费：免税</p></div><span class='money'>￥"+data[i].oldPrice+"</span>"+
+					   // console.log(i,data);
+					    //console.log(cartObj[i]);
+		                 var item = getInfo(i,data);  //8   dataJSON
+		                console.log(item);
+		                html+="<li class='"+item.id+"'><img src='"+item.imageURL+"'/>"+
+		                "<div class='text'><a href='javascript:;'>"+item.content+"</a>"+
+		       			"<p>税费：免税</p></div><span class='money'>￥"+item.oldPrice+"</span>"+
 		       			"<div class='num'>"+
 		       			"<a class='minus'>-</a>"+
 					    "<span class='buyNum'>"+cartObj[i]+"</span>"+
 					    "<a class='add'>+</a>"+
-		       		    "</div><span class='all'>￥"+parseInt(data[i].oldPrice)*parseInt(cartObj[i])+"</span>"+
+		       		    "</div><span class='all'>￥"+parseInt(item.oldPrice)*parseInt(cartObj[i])+"</span>"+
        		            "<i></i></li>";
-
 		             	}
 		           $("#balanPall").append(html); 
 		           $(".count").text("商品共"+count+"件");
-//		           $(".allprice").text("总价（不包含运费）￥"+1047.00)
-//		           var count=1;
-//		           $(".add").click(function(){
-//						count++;
-//						$(".buyNum").text(count);
-//						$(".all").text("￥"+count*parseInt(data[i].oldPrice))						
-//					})
-//		           $(".minus").click(function(){
-//		           	  if(count>1){
-//		           	  	count--;
-//		           	  	$(".buyNum").text(count);
-//						$(".all").text("￥"+count*parseInt(data[i].oldPrice))	
-//		           	  }else{
-//		           	  	alert("您要移除商品吗？")
-//		           	  	$(".buyNum").text(1);
-//		           	  }
-//		           })
+		           
+		         
+                   $("#balanPall li").on("click",function(ev){
+		           	   var $target=$(ev.target);
+		         if($target.is(".num a")){
+		           	  	var c=$target.parent().parent().attr("class");
+		           	  	var a=$target.parent().children(".buyNum").html();
+		           	  	var b=$target.parent().parent().children(".all").html()
+		           	  	console.log(b);
+		           	 if($target.is(".add")){
+		           	 	console.log("+++")
+		           	 	console.log(cartObj)
+		           	 	    ++a;
+		           	 	    console.log(a);
+		           	 	    $target.parent().children(".buyNum").html(a);
+		           	 	    $target.parent().parent().children(".all").html("￥"+a*parseInt(item.oldPrice));
+		           	 	   
+		           	 	    cartObj[c] = a;
+		           	 	    console.log(cartObj)
+		           	  	     //cartObj[c]=cartObj[c]+1;     	      
+		           	 }else{
+		           	 	 --a;
+		           	 	 $target.parent().children(".buyNum").html(a);
+		           	 	 $target.parent().parent().children(".all").html("￥"+a*parseInt(item.oldPrice));
+		           	 	 cartObj[c] = a;
+		           	 	 
+		           	  }
+		           	    if(a<1){
+		           	       a=1;  
+		           	      $target.parent().children(".buyNum").html(a);
+		           	       cartObj[c] = a;
+		           	 }
+		           	  }
+		              var allMoney=0;  
+		            $(".all").each(function(){
+		           	   var n=parseInt($(this).html().substr(1)); 
+		           	     allMoney+=n
+		           	   $(".allprice").html("商品应付总计：￥"+allMoney)
+		           })
+		           	 //在从新将改变后的值存到cookie中；
+		           	 var cart=JSON.stringify(cartObj); 
+		           	 $.cookie("numId",cart,{"expires":7,"path":"/"});
+		           })
 		     }
 			
 		});
-		
+
 		function getInfo(id,data){
-			 for(var i=0;i<data.length;i++){
-			      if(i==data[i].id){
-			      	return data[i];
+			 for(var index =0;index <data.length;index++){
+			      if(id == data[index].id){
+			      	return data[index];
 			      }
 			 }
 		}
-	
-	console.log($(".add"))
+
 	
 		
 		

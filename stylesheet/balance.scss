@@ -91,19 +91,21 @@ h3{
     border:1px solid #ccc;
     background: #f8f8f8;
     width:1095px;
-     line-height:60px ;
     .order-l{
         float:left;
+        margin-top:20px;
     }
     .order-c{
         float:left;
-        margin-left:430px;
+        height:60px;
+        margin-left:400px;
         .count{color:red;font-size:16px;margin-right:10px;}
-       
+        .allprice{margin-right:20px;}
     }
     .order-r{
         float:right;
         width:120px;
+       
         background:#d22147;
         text-align: center;
         color:white;

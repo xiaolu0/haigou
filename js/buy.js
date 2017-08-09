@@ -26,11 +26,13 @@ $(function(){
    
         var cartObj = cartStr ? JSON.parse(cartStr) : {};
    
-        cartObj[id] = cartObj[id] ? cartObj[id]+=num : num;    
+        cartObj[id] =cartObj[id] ? cartObj[id]+=num : num;    
 		console.log(cartObj);
         //存cookie
         var cart = JSON.stringify(cartObj);
+        console.log(cart);
         $.cookie("numId",cart,{"expires":7,"path":"/"});
+        
     }
 
 	
