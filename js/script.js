@@ -2,31 +2,31 @@
 //	console.log($("div"))
 //})
 
-$(".btn1 input:text").focusout(function(){
-//	console.log($(".btn1 input:text").val())
-	var value=$(".btn1 input:text").val()
-	
-	$.ajax({
-	type:"get",
-	url:"json/dl.json",
-	async:true,
-	success:function(data){
-		 var flag=false;
-		for(let i=0;i<data.length;i++){	
-			console.log(value,data[i].user);
-			  if(value==data[i].user){
-			  	 flag=true;
-			  }
-			 
-		}
-		if(flag==false){
-			alert("用户不存在");
-		}
-	}
-     
- });	
- })
-  
+//$(".btn1 input:text").focusout(function(){
+////	console.log($(".btn1 input:text").val())
+//	var value=$(".btn1 input:text").val()
+//	
+//	$.ajax({
+//	type:"get",
+//	url:"json/dl.json",
+//	async:true,
+//	success:function(data){
+//		 var flag=false;
+//		for(let i=0;i<data.length;i++){	
+//			console.log(value,data[i].user);
+//			  if(value==data[i].user){
+//			  	 flag=true;
+//			  }
+//			 
+//		}
+//		if(flag==false){
+//			alert("用户不存在");
+//		}
+//	}
+//   
+// });	
+// })
+//
 
  $(".dl").click(function(){
 // 	console.log("aaaaa")

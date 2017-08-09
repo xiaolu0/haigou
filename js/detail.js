@@ -58,7 +58,7 @@ $.ajax({
 	success:function(data){
 		console.log(data);
 		for(var i=0;i<data.length;i++){
-			var oLi="<li><a href='buy.html?id="+data[i].id+"'><img src="+data[i].imageURL+"/><h4></a>"+data[i].title+"</h4><p>"+data[i].content+"</p><span>"+data[i].oldPrice+"</span><i>"+data[i].newPrice+"</i><a>"+data[i].titleImg+"</a><span class='buy' data-id='"+data[i].id+"'>立即购买</span></li>";
+			var oLi="<li><a href='buy.html?id="+data[i].id+"'><img src="+data[i].imageURL+"><h4></a>"+data[i].title+"</h4><p>"+data[i].content+"</p><span>"+data[i].oldPrice+"</span><i>"+data[i].newPrice+"</i><a>"+data[i].titleImg+"</a><span class='buy' data-id='"+data[i].id+"'>立即购买</span></li>";
 			html+=oLi;
 		}
 		$(".num").append(html);
